@@ -1,0 +1,35 @@
+.ck-editor__editable_inline {
+    min-height: 100px;
+}
+  .ck-body-wrapper{
+    position: fixed;
+    height: 600;
+    z-index: 1300;
+  }
+  .ck-editor__editable_inline {
+    color:whitesmoke !important;
+    background-color:transparent!important;
+    border-radius: 0px 0px 5px 5px!important;
+    border: 0.5px solid #888!important;
+    padding-left: 20px!important;
+    }
+    .ck .ck-toolbar{
+        margin-top: 10px;
+      background-color:transparent!important;
+      border: 0.5px solid #888!important;
+    }
+    .ck .ck-toolbar__items button, svg circle{
+      color:white !important;
+    }
+    .ck .ck-toolbar__items button:hover{
+      color:#333 !important;
+    }
+    .ck .ck-toolbar__items button.ck-button.ck-on{
+      color:#333 !important;
+    }
+    .ck .ck-toolbar__items ul li button{
+      color:#000 !important;
+    }
+    .ck .ck-dropdown__panel_sw .ck-dropdown button, .ck .ck-dropdown__panel_sw button{
+      color:#000 !important;
+    }

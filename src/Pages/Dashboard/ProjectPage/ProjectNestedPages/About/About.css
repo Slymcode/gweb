@@ -1,0 +1,16 @@
+.aboutHeader{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.aboutHeader_heading{
+    font-style: normal;
+    font-size: 28px;
+    line-height: 29px;
+    color: 'white';
+}
+.addToken-btn{
+    background-color: #006bce;
+}
+
+

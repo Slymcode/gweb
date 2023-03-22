@@ -1,0 +1,12 @@
+.addToken-btn{
+    background-color: #006bce;
+}
+.token-card{
+    background: linear-gradient(217.58deg, #343434 0%, #1F1F1F 100%), #232222;;
+}
+.list-disc ul li{
+ list-style:disc;
+}
+.list-disc ol li{
+    list-style:decimal;
+   }
