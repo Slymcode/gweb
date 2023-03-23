@@ -6,13 +6,13 @@ import {createAndLoginUser} from '../networking/user'
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
 let web3auth;
-const clientId = config.clientId;
+const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuVn_hqJMJ8zgKGhSHq1iVonTgH0";
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
                 // type uiConfig
                uiConfig: {
-               appLogo: config.appLogo,
+               appLogo: "https://gateway.pinata.cloud/ipfs/QmeSvMxM4yxg1eRSXdoVsZkwZiV8JpubHGBZMQR7uY42Vc",
                theme: "dark",
                loginMethodsOrder: ["google", "facebook"],
                defaultLanguage: "en",
@@ -21,7 +21,7 @@ const clientId = config.clientId;
                chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
                    chainNamespace: CHAIN_NAMESPACES.EIP155,
                    chainId:"0x1",
-                   rpcTarget: config.rpcTarget,
+                   rpcTarget: "https://mainnet.infura.io/v3/f70263df28824a0792342c248d494fbb",
                }
              });
            console.log("--------------------------------------", config.clientId);
