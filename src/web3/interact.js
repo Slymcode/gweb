@@ -10,17 +10,7 @@ const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-                // type uiConfig
-               uiConfig: {
-               appLogo: config.appLogo,
-               theme: "dark",
-               loginMethodsOrder: ["google", "facebook"],
-               defaultLanguage: "en",
-             },
-               
-               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
-                  
-               }
+        
              });
                await web3auth.initModal();
             if (web3auth.provider) {
