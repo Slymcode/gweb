@@ -9,21 +9,21 @@ let web3auth;
 const clientId = config.clientId;
  const init = async () => {
           try {   
-             web3auth = new Web3Auth({
-                // type uiConfig
-               uiConfig: {
-               appLogo: config.appLogo,
-               theme: "dark",
-               loginMethodsOrder: ["google", "facebook"],
-               defaultLanguage: "en",
-             },
-               clientId,
-               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
-                   chainNamespace: CHAIN_NAMESPACES.EIP155,
-                   chainId: config.chainId,
-                   rpcTarget: config.rpcTarget,
-               }
-             });
+            web3auth = new Web3Auth({
+      clientId,
+      chainConfig: {
+        chainNamespace: CHAIN_NAMESPACES.EIP155,
+        chainId: "0x1",
+        rpcTarget: "https://rpc.ankr.com/eth", // This is the public RPC we have added, please pass on your own endpoint while creating an app
+      },
+      uiConfig: {
+        theme: "dark",
+        loginMethodsOrder: ["github", "google"],
+        defaultLanguage: "en",
+        appLogo: "https://web3auth.io/images/w3a-L-Favicon-1.svg", // Your App Logo Here
+      },
+      web3AuthNetwork: "cyan",
+    });
     
             await web3auth.initModal();
             if (web3auth.provider) {
