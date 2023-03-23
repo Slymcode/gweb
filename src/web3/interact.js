@@ -10,19 +10,17 @@ const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuV
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-                // type uiConfig
-               uiConfig: {
-               appLogo: "https://gateway.pinata.cloud/ipfs/QmeSvMxM4yxg1eRSXdoVsZkwZiV8JpubHGBZMQR7uY42Vc",
-               theme: "dark",
-               loginMethodsOrder: ["google", "facebook"],
-               defaultLanguage: "en",
-             },
-               clientId,
-               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
-                   chainNamespace: CHAIN_NAMESPACES.EIP155,
-                   chainId:"0x1",
-                   rpcTarget: "https://mainnet.infura.io/v3/f70263df28824a0792342c248d494fbb",
-               }
+                clientId: clientId, // get it from Web3Auth Dashboard
+              web3AuthNetwork: "cyan",
+              chainConfig: {
+                chainNamespace: "eip155",
+                chainId: "Ox5",
+                rpcTarget: "https://rpc.ankr.com/eth_goerli",
+                displayName: "Goerli Testnet",
+                blockExplorer: "https://goerli.etherscan.io",
+                ticker: "ETH",
+                tickerName: "Ethereum",
+              },
              });
            console.log("--------------------------------------", config.clientId);
             await web3auth.initModal();
