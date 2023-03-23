@@ -10,7 +10,17 @@ const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-        
+        clientId,
+              web3AuthNetwork: "cyan",
+              chainConfig: {
+    chainNamespace: "eip155",
+    chainId: "Ox5",
+    rpcTarget: "https://rpc.ankr.com/eth_goerli",
+    displayName: "Goerli Testnet",
+    blockExplorer: "https://goerli.etherscan.io",
+    ticker: "ETH",
+    tickerName: "Ethereum",
+  },
              });
                await web3auth.initModal();
             if (web3auth.provider) {
