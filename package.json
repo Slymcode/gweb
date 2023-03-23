@@ -1,6 +1,6 @@
 {
-  "name": "greenlit",
-  "version": "0.1.1",
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^36.0.1",
