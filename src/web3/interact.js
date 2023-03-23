@@ -20,7 +20,7 @@ const clientId = config.clientId;
                clientId,
                chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
                    chainNamespace: CHAIN_NAMESPACES.EIP155,
-                   chainId: config.chainId,
+                   chainId:"0x1",
                    rpcTarget: config.rpcTarget,
                }
              });
