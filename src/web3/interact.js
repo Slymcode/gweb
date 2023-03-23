@@ -17,11 +17,9 @@ const clientId = config.clientId;
                loginMethodsOrder: ["google", "facebook"],
                defaultLanguage: "en",
              },
-               clientId,
+               
                chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
-                   chainNamespace: CHAIN_NAMESPACES.EIP155,
-                   chainId: config.chainId,
-                   rpcTarget: config.rpcTarget,
+                  
                }
              });
                await web3auth.initModal();
