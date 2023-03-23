@@ -10,11 +10,21 @@ const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-               clientId: "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUFmBlTK35DIR6WSwiRv3wks3kfY", // get it from Web3Auth Dashboard
-               web3AuthNetwork: "cyan",
+                // type uiConfig
+               uiConfig: {
+               appLogo: config.appLogo,
+               theme: "dark",
+               loginMethodsOrder: ["google", "facebook"],
+               defaultLanguage: "en",
+             },
+               clientId,
+               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
+                   chainNamespace: CHAIN_NAMESPACES.EIP155,
+                   chainId: config.chainId,
+                   rpcTarget: config.rpcTarget,
+               }
              });
-    
-            await web3auth.initModal();
+               await web3auth.initModal();
             if (web3auth.provider) {
             };
           } catch (error) {
