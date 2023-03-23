@@ -6,30 +6,7 @@ import {createAndLoginUser} from '../networking/user'
 
 let web3auth;
 const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuVn_hqJMJ8zgKGhSHq1iVonTgH0";
- const initt = async () => {
-          try {   
-             web3auth = new Web3Auth({
-                clientId: clientId, // get it from Web3Auth Dashboard
-              web3AuthNetwork: "cyan",
-              chainConfig: {
-                chainNamespace: "eip155",
-                chainId: "Ox5",
-                rpcTarget: "https://rpc.ankr.com/eth_goerli",
-                displayName: "Goerli Testnet",
-                blockExplorer: "https://goerli.etherscan.io",
-                ticker: "ETH",
-                tickerName: "Ethereum",
-              },
-             });
-           console.log("--------------------------------------");
-            await web3auth.initModal();
-            if (web3auth.provider) {
-            };
-          } catch (error) {
-            console.log(error.message);
-          }
-        };
-  initt();
+ 
 
    export const connectWallet = async () => {
         if (!web3auth) {
