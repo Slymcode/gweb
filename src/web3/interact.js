@@ -39,13 +39,14 @@ const clientId = config.clientId;
             console.log("web3auth not initialized yet");
             return;
         }
-        const provider = await web3auth.connect();
+         const provider = await web3auth.connect();
         // if provider is not null then user logged in successfully
         if(provider != null){
             console.log('User logged in successfully.');
          }
           const web3 = new Web3(provider);
           const userAccounts = await web3.eth.getAccounts();
+          console.log(userAccounts);
           const user = await web3auth.getUserInfo();
           const address = userAccounts[0];
           user.address=address;
@@ -65,3 +66,25 @@ const clientId = config.clientId;
 
       }
   }
+
+  export const signTransaction = async () => {   
+    if (!web3auth) {
+        console.log("web3auth not initialized yet");
+        return;
+      }
+  
+      const provider = await web3auth.connect();
+      const web3 = new Web3(provider);
+
+      const fromAddress = (await web3.eth.getAccounts())[0];
+      const originalMessage = "By signing below, I acknowledge that I have read and understand the content of this agreement";
+      return new Promise((resolve, reject) => {
+        web3.eth.personal.sign(originalMessage, fromAddress).then(signedMessage => {
+         resolve({status: true, message: "Message signed successfully", signedMessage: signedMessage}) 
+      }).catch(error => {
+        reject({status: false, message: error.message || "Could not sign the message."});
+    });
+    })  
+  }
+
+  
