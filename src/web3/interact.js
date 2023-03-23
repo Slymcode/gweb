@@ -35,7 +35,6 @@ const clientId = config.clientId;
   init();
 
    export const connectWallet = async () => {
-         init();
         if (!web3auth) {
             console.log("web3auth not initialized yet");
             return;
