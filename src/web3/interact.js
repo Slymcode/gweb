@@ -6,7 +6,7 @@ import {createAndLoginUser} from '../networking/user'
 
 let web3auth;
 const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuVn_hqJMJ8zgKGhSHq1iVonTgH0";
- const init = async () => {
+ const initt = async () => {
           try {   
              web3auth = new Web3Auth({
                 clientId: clientId, // get it from Web3Auth Dashboard
@@ -29,7 +29,7 @@ const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuV
             console.log(error.message);
           }
         };
-  init();
+  initt();
 
    export const connectWallet = async () => {
         if (!web3auth) {
