@@ -10,7 +10,7 @@ const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-               clientId: clientId, // get it from Web3Auth Dashboard
+               clientId: "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUFmBlTK35DIR6WSwiRv3wks3kfY", // get it from Web3Auth Dashboard
                web3AuthNetwork: "cyan",
   chainConfig: {
     chainNamespace: "eip155",
