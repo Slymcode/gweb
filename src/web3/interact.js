@@ -10,19 +10,17 @@ const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-                // type uiConfig
-               uiConfig: {
-               appLogo: config.appLogo,
-               theme: "dark",
-               loginMethodsOrder: ["google", "facebook"],
-               defaultLanguage: "en",
-             },
-               clientId,
-               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
-                   chainNamespace: CHAIN_NAMESPACES.EIP155,
-                   chainId: config.chainId,
-                   rpcTarget: config.rpcTarget,
-               }
+               clientId: clientId, // get it from Web3Auth Dashboard
+               web3AuthNetwork: "cyan",
+  chainConfig: {
+    chainNamespace: "eip155",
+    chainId: "Ox5",
+    rpcTarget: "https://rpc.ankr.com/eth_goerli",
+    displayName: "Goerli Testnet",
+    blockExplorer: "https://goerli.etherscan.io",
+    ticker: "ETH",
+    tickerName: "Ethereum",
+  },
              });
     
             await web3auth.initModal();
