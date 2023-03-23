@@ -12,15 +12,6 @@ const clientId = config.clientId;
              web3auth = new Web3Auth({
                clientId: "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUFmBlTK35DIR6WSwiRv3wks3kfY", // get it from Web3Auth Dashboard
                web3AuthNetwork: "cyan",
-  chainConfig: {
-    chainNamespace: "eip155",
-    chainId: "Ox5",
-    rpcTarget: "https://rpc.ankr.com/eth_goerli",
-    displayName: "Goerli Testnet",
-    blockExplorer: "https://goerli.etherscan.io",
-    ticker: "ETH",
-    tickerName: "Ethereum",
-  },
              });
     
             await web3auth.initModal();
