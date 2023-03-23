@@ -14,7 +14,7 @@ const clientId = config.clientId;
               web3AuthNetwork: "cyan",
               chainConfig: {
     chainNamespace: "eip155",
-    chainId: "Ox5",
+
     rpcTarget: "https://rpc.ankr.com/eth_goerli",
     displayName: "Goerli Testnet",
     blockExplorer: "https://goerli.etherscan.io",
