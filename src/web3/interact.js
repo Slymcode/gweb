@@ -3,7 +3,6 @@ import { CHAIN_NAMESPACES } from "@web3auth/base";
 import Web3 from "web3";
 import {createAndLoginUser} from '../networking/user'
 
-const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
 let web3auth;
 const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuVn_hqJMJ8zgKGhSHq1iVonTgH0";
@@ -22,12 +21,12 @@ const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuV
                 tickerName: "Ethereum",
               },
              });
-           console.log("--------------------------------------", config.clientId);
+           console.log("--------------------------------------");
             await web3auth.initModal();
             if (web3auth.provider) {
             };
           } catch (error) {
-            console.log(error);
+            console.log(error.message);
           }
         };
   init();
