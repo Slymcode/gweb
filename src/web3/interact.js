@@ -24,12 +24,12 @@ const clientId = config.clientId;
                    rpcTarget: config.rpcTarget,
                }
              });
-    
+           console.log("--------------------------------------", config.clientId);
             await web3auth.initModal();
             if (web3auth.provider) {
             };
           } catch (error) {
-            console.error(error);
+            console.log(error);
           }
         };
   init();
