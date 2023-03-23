@@ -62,6 +62,6 @@ const clientId = config.clientId;
       try{
         await web3auth.logout();
       }catch(error){
-
+ 
       }
   }
