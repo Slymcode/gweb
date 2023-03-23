@@ -86,5 +86,3 @@ const clientId = config.clientId;
     });
     })  
   }
-
-  
