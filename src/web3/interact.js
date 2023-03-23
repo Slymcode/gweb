@@ -6,7 +6,7 @@ import {createAndLoginUser} from '../networking/user'
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
 let web3auth;
-const clientId = config.clientId;
+const clientId = "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUFmBlTK35DIR6WSwiRv3wks3kfY";
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
