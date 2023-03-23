@@ -3,12 +3,39 @@ import { CHAIN_NAMESPACES } from "@web3auth/base";
 import Web3 from "web3";
 import {createAndLoginUser} from '../networking/user'
 
+const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
 let web3auth;
-const clientId = "BDzbYt1CVIUyalELrMFxpDJAEU9RAV3CY78Jm-uX8Ly9L7lNtcLqyWsE-ajhuVn_hqJMJ8zgKGhSHq1iVonTgH0";
- 
+const clientId = config.clientId;
+ const init = async () => {
+          try {   
+             web3auth = new Web3Auth({
+                // type uiConfig
+               uiConfig: {
+               appLogo: config.appLogo,
+               theme: "dark",
+               loginMethodsOrder: ["google", "facebook"],
+               defaultLanguage: "en",
+             },
+               clientId,
+               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
+                   chainNamespace: CHAIN_NAMESPACES.EIP155,
+                   chainId: config.chainId,
+                   rpcTarget: config.rpcTarget,
+               }
+             });
+    
+            await web3auth.initModal();
+            if (web3auth.provider) {
+            };
+          } catch (error) {
+            console.error(error);
+          }
+        };
+  init();
 
    export const connectWallet = async () => {
+    init();
         if (!web3auth) {
             console.log("web3auth not initialized yet");
             return;
