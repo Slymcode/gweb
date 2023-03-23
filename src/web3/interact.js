@@ -9,21 +9,21 @@ let web3auth;
 const clientId = config.clientId;
  const init = async () => {
           try {   
-            web3auth = new Web3Auth({
-      clientId,
-      chainConfig: {
-        chainNamespace: CHAIN_NAMESPACES.EIP155,
-        chainId: "0x1",
-        rpcTarget: "https://rpc.ankr.com/eth", // This is the public RPC we have added, please pass on your own endpoint while creating an app
-      },
-      uiConfig: {
-        theme: "dark",
-        loginMethodsOrder: ["github", "google"],
-        defaultLanguage: "en",
-        appLogo: "https://web3auth.io/images/w3a-L-Favicon-1.svg", // Your App Logo Here
-      },
-      web3AuthNetwork: "cyan",
-    });
+             web3auth = new Web3Auth({
+                // type uiConfig
+               uiConfig: {
+               appLogo: config.appLogo,
+               theme: "dark",
+               loginMethodsOrder: ["google", "facebook"],
+               defaultLanguage: "en",
+             },
+               clientId,
+               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
+                   chainNamespace: CHAIN_NAMESPACES.EIP155,
+                   chainId: config.chainId,
+                   rpcTarget: config.rpcTarget,
+               }
+             });
     
             await web3auth.initModal();
             if (web3auth.provider) {
@@ -39,14 +39,13 @@ const clientId = config.clientId;
             console.log("web3auth not initialized yet");
             return;
         }
-         const provider = await web3auth.connect();
+        const provider = await web3auth.connect();
         // if provider is not null then user logged in successfully
         if(provider != null){
             console.log('User logged in successfully.');
          }
           const web3 = new Web3(provider);
           const userAccounts = await web3.eth.getAccounts();
-          console.log(userAccounts);
           const user = await web3auth.getUserInfo();
           const address = userAccounts[0];
           user.address=address;
@@ -65,24 +64,4 @@ const clientId = config.clientId;
       }catch(error){
 
       }
-  }
-
-  export const signTransaction = async () => {   
-    if (!web3auth) {
-        console.log("web3auth not initialized yet");
-        return;
-      }
-  
-      const provider = await web3auth.connect();
-      const web3 = new Web3(provider);
-
-      const fromAddress = (await web3.eth.getAccounts())[0];
-      const originalMessage = "By signing below, I acknowledge that I have read and understand the content of this agreement";
-      return new Promise((resolve, reject) => {
-        web3.eth.personal.sign(originalMessage, fromAddress).then(signedMessage => {
-         resolve({status: true, message: "Message signed successfully", signedMessage: signedMessage}) 
-      }).catch(error => {
-        reject({status: false, message: error.message || "Could not sign the message."});
-    });
-    })  
   }
