@@ -34,6 +34,11 @@ const clientId = "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUF
   init();
 
    export const connectWallet = async () => {
+        console.log("clientId",config.clientId)
+        console.log("chainId",config.chainId)
+        console.log("rpcTarget",config.rpcTarget)
+        console.log("appLogo",config.appLogo)
+    
         if (!web3auth) {
             console.log("web3auth not initialized yet");
             return;
