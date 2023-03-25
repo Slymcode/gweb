@@ -6,27 +6,29 @@ import {createAndLoginUser} from '../networking/user'
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
 
 let web3auth;
-const clientId = "BD1suR9-6AQR3hP94uyf5_lx5TfGhqJkJ8yWmzA-V3Mq889yk1WJu5P42yJPUFmBlTK35DIR6WSwiRv3wks3kfY";
+const clientId = config.clientId;
  const init = async () => {
           try {   
              web3auth = new Web3Auth({
-                // type uiConfi
+                // type uiConfig
+               uiConfig: {
+               appLogo: config.appLogo,
+               theme: "dark",
+               loginMethodsOrder: ["google", "facebook"],
+               defaultLanguage: "en",
+             },
                clientId,
-              web3AuthNetwork: "cyan",
-  chainConfig: {
-    chainNamespace: "eip155",
-    chainId: "Ox5",
-    rpcTarget: "https://rpc.ankr.com/eth_goerli",
-    displayName: "Goerli Testnet",
-    blockExplorer: "https://goerli.etherscan.io",
-    ticker: "ETH",
-    tickerName: "Ethereum",
-  },
+               chainConfig: { // this is ethereum chain config, change if other chain(Solana, Polygon)
+                   chainNamespace: CHAIN_NAMESPACES.EIP155,
+                   chainId: config.chainId,
+                   rpcTarget: config.rpcTarget,
+               }
              });
     
             await web3auth.initModal();
             if (web3auth.provider) {
             };
+           console.log(web3auth);
           } catch (error) {
             console.error(error);
           }
