@@ -22,7 +22,8 @@ const clientId = config.clientId;
                    chainNamespace: CHAIN_NAMESPACES.EIP155,
                    chainId: config.chainId,
                    rpcTarget: config.rpcTarget,
-               }
+               },
+              web3AuthNetwork: "testnet",
              });
     
             await web3auth.initModal();
