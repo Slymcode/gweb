@@ -1,4 +1,4 @@
-import { Web3Auth } from "@web3auth/web3auth";
+import { Web3Auth } from "@web3auth/modal";
 import { CHAIN_NAMESPACES } from "@web3auth/base";
 import Web3 from "web3";
 import {createAndLoginUser} from '../networking/user'
