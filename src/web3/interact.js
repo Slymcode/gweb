@@ -234,7 +234,24 @@ init();
 
 
   export const connectWallet = async () => {
-    await getUserInfo(); 
+     if (!web3auth) {
+            console.log("web3auth not initialized yet");
+            return;
+        }
+         const provider = await web3auth.connect();
+        // if provider is not null then user logged in successfully
+        if(provider != null){
+            console.log('User logged in successfully.');
+         }
+          const web3 = new Web3(provider);
+          const userAccounts = await web3.eth.getAccounts();
+          console.log(userAccounts);
+          const user = await web3auth.getUserInfo();
+          const address = userAccounts[0];
+          user.address=address;
+          return await createAndLoginUser(user).then(res => {           
+            return res;
+          }) 
   };
 
     export const disconnnectWallet = async () => {   
