@@ -103,6 +103,7 @@ import { TorusWalletConnectorPlugin } from "@web3auth/torus-wallet-connector-plu
 import { WalletConnectV2Adapter, getWalletConnectV2Settings } from "@web3auth/wallet-connect-v2-adapter";
 import { MetamaskAdapter } from "@web3auth/metamask-adapter";
 import { TorusWalletAdapter } from "@web3auth/torus-evm-adapter";
+import Web3 from "web3";
 import {createAndLoginUser} from '../networking/user'
 
 const config = require('../config/config')[process.env.NODE_ENV || 'development'];
