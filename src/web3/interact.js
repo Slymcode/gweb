@@ -129,7 +129,7 @@ const clientId =config.clientId;// get from https://dashboard.web3auth.io
         defaultLanguage: "en",
         appLogo: "https://web3auth.io/images/w3a-L-Favicon-1.svg", // Your App Logo Here
       },
-      web3AuthNetwork: "cyan",
+      web3AuthNetwork: "testnet",
     });
 
     const openloginAdapter = new OpenloginAdapter({
