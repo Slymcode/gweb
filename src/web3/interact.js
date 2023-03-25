@@ -66,7 +66,6 @@ const clientId = config.clientId;
 
       }
   }
-
   export const signTransaction = async () => {   
     if (!web3auth) {
         console.log("web3auth not initialized yet");
