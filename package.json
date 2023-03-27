@@ -63,20 +63,15 @@
       "react-app/jest"
     ]
   },
-   "browserslist": {
-    "production": [
-      "chrome >= 67",
-      "edge >= 79",
-      "firefox >= 68",
-      "opera >= 54",
-      "safari >= 14"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+   "browserslist": [
+    "chrome > 52",
+    "opera > 39",
+    "edge > 14",
+    "firefox > 52",
+    "safari > 10.1",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
     "keyv": "^4.5.1",
