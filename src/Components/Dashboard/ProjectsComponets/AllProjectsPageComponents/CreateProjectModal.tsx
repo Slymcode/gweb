@@ -272,7 +272,7 @@ export const CreateProjectModal: React.FC<any> = (props) => {
                       Required stake
                     </h3>
                     <p className="text-xs text-white mt-2" style={{fontSize: '11px'}}>
-                      {data.requiredStake} {data.token.tokenName} 
+                      {data.requiredStake} {data.token?.tokenName} 
                     </p>
                   </div>
                   <div>
