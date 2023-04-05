@@ -72,13 +72,6 @@
     "not dead",
     "not op_mini all"
   ],
-  "production": [
-      "chrome >= 67",
-      "edge >= 79",
-      "firefox >= 68",
-      "opera >= 54",
-      "safari >= 14"
-    ],
   "devDependencies": {
     "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
     "keyv": "^4.5.1",
